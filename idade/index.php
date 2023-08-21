@@ -16,5 +16,14 @@
         <br><br>
         <button type="submite">Idade</button>
     </form>
+    <?php 
+       date_default_timezone_set("America/Sao_Paulo"); //Define o Fuso horáro default
+
+       print_r(new DateTime()); // Data no formato que é criado.
+
+
+       $agora = new DateTime();
+       echo "<br> Agora: ".$agora->format("d/m/Y"); //Data formatada para padrão do Brasil
+    ?>
 </body>
 </html>
