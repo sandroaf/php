@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio Dados JS</title>
+    <script language="JavaScript">
+        function mostrarDado(imgDado) {
+            document.querySelector('#dDado').innerHTML = "<img src='"+imgDado+"' width='320px'>";
+        }
+
+        function jogarDado() { 
+           mostrarDado("dados/sorteio.gif");
+           let dado = Math.floor((Math.random() * 6) + 1); 
+           const mto = setTimeout(mostrarDado,3000,"dados/"+dado+".png");
+        }
+    </script>
+</head>
+<body>
+    <h1>Sorteio de Dados JS</h1>
+    <br>
+    <button type="button" onclick="jogarDado()">Jogar Dado</button>
+    <div id="dDado"></div>
+</body>
+</html>
