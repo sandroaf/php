@@ -1,0 +1,37 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+header{
+    display: flex;
+}
+
+aside {
+    padding: 10px;
+}
+
+article {
+    padding:  10px ;
+    border-left: 1px darkgray dashed;
+}
+
+button {
+    display: block;
+    margin: 5px auto;
+    width: 100px;
+    height: 32px;
+    background-color: green;
+    font-weight: bold;
+    color: white;
+}
+
+input, textarea {
+    margin-bottom: 2dvh;
+}
