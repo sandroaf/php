@@ -1,7 +1,9 @@
 {
     "require": {
-        "mailgun/mailgun-php": "~1.7.1",
-        "nyholm/psr7": "^1.8"
+        "mailgun/mailgun-php": "^3.6",
+        "nyholm/psr7": "^1.8",
+        "phpmailer/phpmailer": "^6.8",
+        "symfony/http-client": "^6.3"
     },
     "config": {
         "allow-plugins": {
