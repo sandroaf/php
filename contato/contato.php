@@ -24,7 +24,7 @@
             </div>
         </aside>
         <article>
-            <form action="" method="post">
+            <form action="envio.php" method="post">
                 <label for="iNome">NOME:</label><br>
                 <input id="iNome" type="text" name="nome" placeholder="Seu nome"><br>
                 <label for="iFone">TELEFONE:</label><br>
@@ -32,7 +32,7 @@
                 <label for="iEmail">E-MAIL:</label><br>
                 <input id="iEmail" type="email" name="email" placeholder="e-mail válido"><br>
                 <label for="iAssunto">ASSUNTO:</label><br>
-                <input id="iAssuntto" name="Assunto" placeholder="Assunto da mensagem"><br>
+                <input id="iAssuntto" name="assunto" placeholder="Assunto da mensagem"><br>
                 <label for="iMensagem">MENSAGEM:</label><br>
                 <textarea id="iMensagem" name="mensagem" cols="50" rows="5" placeholder="Qual sua mensagem?"></textarea><br><br>
                 <button id="bEnviar" name="enviar" type="submit">ENVIAR</button>

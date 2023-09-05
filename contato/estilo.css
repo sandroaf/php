@@ -1,16 +1,17 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+header{
+    display: flex;
+}
+
 main {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: flex-start;
     flex-wrap: wrap;
-}
-
-header{
-    display: flex;
 }
 
 aside {
