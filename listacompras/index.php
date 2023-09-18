@@ -7,7 +7,7 @@
     <script language="JavaScript">
         function incluir() {
             event.preventDefault();
-            window.location = "./incluirlista.html";
+            window.location = "./incluirlista.php";
         }
     </script>
 </head>
