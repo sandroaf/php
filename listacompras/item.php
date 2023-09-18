@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Compras - Nro:<?php echo($_GET["lista"])?></title>
+    <script language="JavaScript">
+        function incluir() {
+            event.preventDefault();
+            window.location = "../incluiritem.php/?lista="+<?=$_GET["lista"]?>;
+        }
+    </script>
 </head>
 <body>
     <h1> Lista de Compras - Nro:
@@ -31,6 +37,8 @@
         echo "</pre>";
      }
     ?>
+    <br>
+    <button name="bincluir" id="bincluir" type="button" onclick="incluir()">Novo item</button>
     <br>
     <a href="/php/listacompras/index.php">Voltar</a>
 </body>
