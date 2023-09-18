@@ -1,26 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Compras</title>
+    <script language="JavaScript">
+        function incluir() {
+            event.preventDefault();
+            window.location = "./incluirlista.html";
+        }
+    </script>
 </head>
 <body>
+    <h1>Lista de Compras</h1>
     <?php 
-       //Variáveis para realizar a conexão com o Banco de Dados
-       $db_servidor = "localhost";
-       $db_nome = "listacompras";
-       $db_usuario = "root";
-       $db_senha = "";
-
+       require_once "conexao.php"; 
        try {
-           /*Instancia um Objeto PDO com o Banco de Dados MySQL e 
-           parametros das variáveis */
-           $conn = new PDO("mysql:host=$db_servidor;dbname=$db_nome", $db_usuario, $db_senha);
-           // configurar PDO Error para Exceção
-           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-           echo "Conexão bem sucedida";
-
            //Realizar Consulta a tabela lista
            //Prepara o SQL
            $stmt = $conn->prepare("SELECT * FROM lista");
@@ -37,8 +32,12 @@
            echo("</ul><br>");
            $conn = null;
        } catch(PDOException $e) {
-          echo "Erro ao conectar Banco de Dados".$e->getMessage();
+          echo "<pre>";
+          echo "Erro ao executar".$e->getMessage();
+          echo "</pre>";
        }
     ?>
+    <br>
+    <button name="bincluir" id="bincluir" type="button" onclick="incluir()">Nova lista</button>
 </body>
 </html>
