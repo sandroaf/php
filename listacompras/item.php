@@ -40,6 +40,7 @@
     <br>
     <button name="bincluir" id="bincluir" type="button" onclick="incluir()">Novo item</button>
     <br>
+    <br>
     <a href="/php/listacompras/index.php">Voltar</a>
 </body>
 </html>
