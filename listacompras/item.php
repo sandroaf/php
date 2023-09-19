@@ -9,6 +9,13 @@
             event.preventDefault();
             window.location = "../incluiritem.php/?lista="+<?=$_GET["lista"]?>;
         }
+
+        function apagar(codigo) {
+            event.preventDefault();
+            if (window.confirm("Confirma exclusão do item: "+codigo)) {
+               window.location = "../apagaitem.php/?codigo="+codigo; 
+            }             
+        }
     </script>
 </head>
 <body>
@@ -27,8 +34,9 @@
                echo("<li>".$linha["codigo"]." - "
                .$linha["datahora"]." - "
                .$linha["descricao"]." - "
-               .$linha["quantidade"] 
-               ."</li>");
+               .$linha["quantidade"]
+               ."&nbsp;&nbsp;<button onclick='apagar(".$linha['codigo'].")')><img src='../lixeira.png' title='Apagar Item'></button>" 
+               ."</li>"); 
            }
            echo("</ul><br>");
        } catch(PDOException $e) {
