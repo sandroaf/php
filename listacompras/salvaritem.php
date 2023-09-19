@@ -9,7 +9,6 @@
     <?php 
     //Abrir Conexao com Banco de Dados
     require_once "conexao.php";
-
     //Executar a Inclusão
     try {
         $parametro = ['descricao' => $_GET['descricao']
