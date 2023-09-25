@@ -35,10 +35,10 @@
            //Realizar Consulta a tabela lista
            //Prepara o SQL 
            if (empty($_GET["busca"])) {
-               //busca todos os dados da tabela item
+               //busca todos os dados da tabela
                $stmt = $conn->prepare("SELECT * FROM lista");
            } else {
-               //busca os dados da tabela item, aplicando a busca digitada pelo usuário
+               //busca os dados da tabela, aplicando a busca digitada pelo usuário
                //Monta SQL com parametros da busca
                $sql = "SELECT * FROM lista WHERE CODIGO = '".$_GET["busca"]
                       ."' OR NOME LIKE '%".$_GET["busca"]."%'";
