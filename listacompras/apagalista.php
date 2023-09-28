@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="../estilo.css">
     <title>Apagar Lista</title>
 </head>
+
 <body>
-    <?php 
+    <main>
+        <?php
         //Abrir Conexao com Banco de Dados
         require_once "conexao.php";
         //Executar a Inclusão
@@ -28,11 +33,13 @@
             //Excibir voltar
             echo "<br>";
             echo "<a href='./index.php'>Voltar</a>";
-        } catch(PDOException $e) {
+        } catch (PDOException $e) {
             echo "<pre>";
-            echo "Erro ao executar".$e->getMessage();
+            echo "Erro ao executar" . $e->getMessage();
             echo "</pre>";
         }
-    ?>
+        ?>
+    </main>
 </body>
+
 </html>

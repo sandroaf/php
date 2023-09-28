@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main {
+    width: 80%;
+    margin: 10px auto;
+}
+
+button, input {
+    padding: 2px;
+}
+
+ul {
+    width: 100%;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 5px;
+    box-shadow: 1px 1px 1px gray;
+    border-bottom: 1px solid lightgray;
+    padding: 5px 3px 10px 3px;
+}
+
+li:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+li > a {
+    float: left;
+    padding-left: 5px; 
+    width: 90%;
+}
+
+li > a:link, li > a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+li > button {
+    float: right;
+    margin: 0 3px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: white;
+    border: 1px solid rgb(37, 110, 37);
+    border-radius: 5px;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background-color: white;
+    border: 1px solid rgb(95, 4, 4);
+    border-radius: 5px;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+button#bbusca  {
+    background-color: transparent;
+    border:none;
+    cursor:pointer;
+}
+
+button.incluir {
+    background-color: white;
+    border:none;
+    cursor:pointer;
+}
+
+button.incluir:hover {
+    font-weight: bold;
+}
+
+button.incluir > img {
+    margin: auto 0;
+    vertical-align: top;
+}
+
+button.incluir > img:hover {
+    scale: 110%;
+}
+
+
+@media only screen and (max-width: 300px) {
+    main {
+        width: 98%;
+        margin: 5px auto;
+    }
+}
