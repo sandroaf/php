@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <?php
+        //Abrir Conexao com Banco de Dado
+        require_once "conexao.php";
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" href="./estilo.css">
+    <link rel="stylesheet" href="<?=url_app?>/estilo.css">
+    <script src="<?=url_app?>/funcoes.js"></script>
     <title>Lista de Compras</title>
     <script language="JavaScript">
         function incluir() {
             event.preventDefault();
-            window.location = "./incluirlista.php";
+            window.location = "<?=url_app?>/incluirlista.php";
         }
 
         function apagar(codigo) {
             event.preventDefault();
             if (window.confirm("Confirma execlusão da lista: "+codigo)) {
-                window.location = "./apagalista.php?codigo="+codigo;    
+                window.location = "<?=url_app?>/apagalista.php?codigo="+codigo;    
             }
         }
 
         function alterar(codigo) {
             event.preventDefault();
-            window.location = "./alterarlista.php?codigo="+codigo;    
+            window.location = "<?=url_app?>/alterarlista.php?codigo="+codigo;    
         }
+        <?php 
+           if (!empty($_GET['msg'])) {
+              echo "salvarmsg('".$_GET['msg']."');"; 
+           }
+        ?>
     </script>
 </head>
-<body>
+<body onload="mostramsg()">
     <main>
         <header>
             <h1>Lista de Compras</h1>
         </header>
+        <aside id="msg"></aside>
         <form id="fbusca" action="index.php" method="get">
             <input id="ibusca" name="busca" placeholder="Digite algo para buscar">
-            <button id="bbusca" name="bbusca" value="busca"><img src="./img/lupa.png"></button> 
+            <button id="bbusca" name="bbusca" value="busca"><img src="<?=url_app?>/img/lupa.png"></button> 
         </form>
         <?php 
-        require_once "conexao.php"; 
         try {
             //Realizar Consulta a tabela lista
             //Prepara o SQL 
@@ -47,8 +57,8 @@
                 //Monta SQL com parametros da busca
                 $sql = "SELECT * FROM lista WHERE CODIGO = '".$_GET["busca"]
                         ."' OR NOME LIKE '%".$_GET["busca"]."%'";
-                echo $sql;
-                echo "<strong>Pesquisando por: </strong><mark>".$_GET["busca"]."</mark>";
+                //echo $sql;
+                echo "<strong>Pesquisando por: </strong><mark>".$_GET["busca"]."</mark><br>";
                 $stmt = $conn->prepare($sql);
             }
 
@@ -59,12 +69,12 @@
             foreach ($stmt as $linha) {
                 //apresenta dados das Listas
                 echo("<li>");
-                echo("<a href='item.php/?lista=".$linha["codigo"]."'>".$linha["codigo"]);
+                echo("<a href='".url_app."/item.php/?lista=".$linha["codigo"]."'>".$linha["codigo"]);
                 echo(" - ".$linha["nome"]."</a>");
                 echo("&nbsp;&nbsp;");
-                echo("<button onclick='alterar(".$linha["codigo"].")'><img src='img/pencil.png'></button>");
+                echo("<button onclick='alterar(".$linha["codigo"].")'><img src='".url_app."/img/pencil.png'></button>");
                 echo("&nbsp;&nbsp;");
-                echo("<button onclick='apagar(".$linha["codigo"].")'><img src='img/lixeira.png'></button></li>");
+                echo("<button onclick='apagar(".$linha["codigo"].")'><img src='".url_app."/img/lixeira.png'></button></li>");
             }
             echo("</ul><br>");
             $conn = null;
@@ -75,7 +85,9 @@
         }
         ?>
         <br>
-        <button class="incluir" name="bincluir" id="bincluir" type="button" onclick="incluir()"><img src="./img/mais.png">  Nova lista</button>
+        <button class="incluir" name="bincluir" id="bincluir" type="button" onclick="incluir()">
+           <img src="<?=url_app?>/img/mais.png">  Nova lista
+        </button>
     </main>
     </body>
 </html>

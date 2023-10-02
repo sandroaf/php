@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<?php require_once("config.php") ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="<?=url_app?>/estilo.css">
+    <script src="<?=url_app?>funcoes.js"></script>
     <title>Incluir Item</title>
     <script language="JavaScript">
         function cancelar() {
@@ -22,7 +23,7 @@
         </header>
 
         <br>
-        <form action="../salvaritem.php" method="get">
+        <form action="<?=url_app?>/salvaritem.php" method="get">
             <label for="idescricao">Descrição: </label>
             <input type="text" id="idescricao" name="descricao" placeholder="Informe uma descrição para o item da lista" size="100" required>
             <br>

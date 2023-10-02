@@ -1,5 +1,7 @@
 <?php 
     //Variáveis para realizar a conexão com o Banco de Dados
+    require_once("config.php");
+    
     $db_servidor = "localhost";
     $db_nome = "listacompras";
     $db_usuario = "root";
