@@ -6,4 +6,8 @@
 
    //Constante para url_app - url base da aplicação
    define("url_app","http://localhost/php/listacompras");
+
+   //constante usuário e senha
+   define("usuario_app","sandroaf");
+   define("senha_app","slcsandro");
 ?>

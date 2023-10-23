@@ -39,9 +39,14 @@
     <main>
         <header>
             <h1>Lista de Compras</h1>
+            <?php
+               if ($_SESSION["conectado"]) {
+                  echo "<a href='logout.php'>SAIR</a><br>";
+               }
+            ?>
         </header>
         <aside id="msg"></aside>
-        <form id="fbusca" action="index.php" method="get">
+            <form id="fbusca" action="index.php" method="get">
             <input id="ibusca" name="busca" placeholder="Digite algo para buscar">
             <button id="bbusca" name="bbusca" value="busca"><img src="<?=url_app?>/img/lupa.png"></button> 
         </form>
@@ -86,7 +91,7 @@
         ?>
         <br>
         <button class="incluir" name="bincluir" id="bincluir" type="button" onclick="incluir()">
-           <img src="<?=url_app?>/img/mais.png">  Nova lista
+        <img src="<?=url_app?>/img/mais.png">  Nova lista
         </button>
     </main>
     </body>

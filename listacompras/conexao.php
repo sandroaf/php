@@ -1,7 +1,20 @@
 <?php 
+    session_start();
     //Variáveis para realizar a conexão com o Banco de Dados
     require_once("config.php");
-    
+    //testa permissões de acesso a aplicação
+    if ((isset($_SESSION["usuario"]) && isset($_SESSION["conectado"]))) {
+        if (($_SESSION["usuario"] == usuario_app && $_SESSION["conectado"] == true)) {
+            $usuario = $_SESSION["usuario"];
+        } else {
+            header("Location: ".url_app."/login.php",true);
+            die();
+        }
+    } else {
+        header("Location: ".url_app."/login.php",true);
+        die();
+    }
+
     $db_servidor = "localhost";
     $db_nome = "listacompras";
     $db_usuario = "root";
