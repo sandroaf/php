@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de uso de LocalStorage</title>
+    <script>
+        function salvarLocal() {
+            console.log(document.querySelector("#inomedado").value+" - "+document.querySelector("#ivalordado").value);
+            localStorage.setItem(document.querySelector("#inomedado").value,document.querySelector("#ivalordado").value);
+            
+            document.querySelector("#resultado").innerHTML = document.querySelector("#resultado").innerHTML + "Dado salvo no Local Storage<br>";
+        }
+
+        function buscarLocal() {
+            document.querySelector("#resultado").innerHTML = document.querySelector("#resultado").innerHTML + 
+            "Valor salvo de "+document.querySelector("#iconsultardado").value+" é: "+localStorage.getItem(document.querySelector("#iconsultardado").value)+"<br>";
+        }
+    </script>
+</head>
+<body> 
+    <fieldset>
+        <legend>Dados para Armazenamento Local</legend>
+        <label for="inomedado">Nome do Dado:</label>  
+        <input type="text" name="nomedado" id="inomedado">
+        <br>
+        <label for="ivalordado">Valor do Dado:</label>  
+        <input type="text" name="valordado" id="ivalordado">
+        <br>
+        <button onclick="salvarLocal()">Enviar</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Consultar</legend>
+        <label for="iconsultardado">Nome do Dado:</label>
+        <input id="iconsultardado" name="nomedadoconsulta">
+        <button onclick="buscarLocal()">Consultar</button>
+    </fieldset>
+
+    <div id="resultado"></div>
+</body>
+</html>
