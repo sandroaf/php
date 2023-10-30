@@ -8,25 +8,34 @@ if (isset($_POST["logar"])) {
         $_SESSION["conectado"] = true;
         header("Location: " . url_app . "/index.php");
     } else {
-        echo ("Login ou senha inválido.<br>");
+        $msg=("Login ou senha inválido.<br>");
     }
 }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= url_app ?>/estilo.css">
+    <script src="<?=url_app?>/funcoes.js"></script>
     <title>Login</title>
+    <script>
+        <?php
+           if ($msg) {
+               echo "salvarmsg('" . $msg . "');";
+               $msg = "";
+           }
+        ?>       
+    </script>
 </head>
 
-<body>
-    <header>
-        <h1>Lista de Compras - Login</h1>
-    </header>
+<body onload="mostramsg()">
     <main>
+        <header>
+            <h1>Lista de Compras - Login</h1>
+            <aside id="msg"></aside>
+        </header>
         <form action="<?= url_app ?>/login.php" method="post">
             <label>Usuário: </label>
             <input type="text" name="usuario" id="iusuario">

@@ -41,12 +41,12 @@
             <h1>Lista de Compras</h1>
             <?php
                if ($_SESSION["conectado"]) {
-                  echo "<a href='logout.php'>SAIR</a><br>";
+                  echo "<a class='sair' href='".url_app."/logout.php'>SAIR</a><br>";
                }
             ?>
         </header>
         <aside id="msg"></aside>
-            <form id="fbusca" action="index.php" method="get">
+        <form id="fbusca" action="index.php" method="get">
             <input id="ibusca" name="busca" placeholder="Digite algo para buscar">
             <button id="bbusca" name="bbusca" value="busca"><img src="<?=url_app?>/img/lupa.png"></button> 
         </form>

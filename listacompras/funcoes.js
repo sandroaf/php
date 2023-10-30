@@ -19,6 +19,6 @@ function mostramsg() {
 }
 
 function apagamsg() {
-    document.querySelector("#msg").innerHTML = ""
+    document.querySelector("#msg").innerHTML = "";
     window.sessionStorage.removeItem('msg');
 }

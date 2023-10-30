@@ -90,6 +90,16 @@ button.incluir > img:hover {
     scale: 110%;
 }
 
+a.sair {
+    font-size: smaller;
+    font-weight: bolder;
+    float: right;
+    padding: 5px;
+    margin: 5px auto;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
 
 @media only screen and (max-width: 300px) {
     main {

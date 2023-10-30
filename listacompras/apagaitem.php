@@ -26,7 +26,7 @@
                 $msg="Exclusão de Item bem sucedida !";
             }
             //Voltar
-            header("Location: ".url_app."/item.php?lista=".$_GET['codigo']."&msg=".$msg);
+            header("Location: ".url_app."/item.php?lista=".$_GET['lista']."&msg=".$msg);
         } catch (PDOException $e) {
             echo "<pre>";
             echo "Erro ao executar" . $e->getMessage();
